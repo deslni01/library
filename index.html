@@ -5,8 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick's Library</title>
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
-    
+    <header>
+        <p id="title">A Library. Super High-Tech Stuff.</p>
+    </header>
+
+
+
+        <p>Add a new book to the library:</p>
+
+        <div class="form">      
+                    
+            <input type="text" id="title" class="bookform" required placeholder="Book Title">
+            
+            <input type="text" id="author" class="bookform" required placeholder="Author Name">
+            
+            <input type="number" id="pages" class="bookform" required min="1" max="99999" placeholder="Pages">
+
+            <select id="read" name="read">
+                <option value="read">Read</option>
+                <option value="unread">Unread</option>
+            </select>
+
+            <button id="submit">Add to Library</button>   
+
+        </div>
+
+        <div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="shelf">
+                    <tr>
+                        <td>The Hobbit</td>
+                        <td>JRR Tolkien</td>
+                        <td>392</td>
+                        <td>Read</td>
+                    </tr>
+                    <tr>
+                        <td>Dune</td>
+                        <td>Frank Herbert</td>
+                        <td>512</td>
+                        <td>Read</td>
+                    </tr>
+                    <tr>
+                        <td>Norse Gods</td>
+                        <td>Neil Gaiman</td>
+                        <td>400</td>
+                        <td>Unread</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+
+    </footer>
+
+
+
+
+    <script src="scripts.js"></script>
 </body>
 </html>
