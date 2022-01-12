@@ -30,9 +30,9 @@
                 <input type="number" id="pages" class="form-input" name="pages"  minlength="1" maxlength="99999" placeholder="Number of Pages" required>
                 <label class="form-label">Number of Pages</label>
 
-                <select id="read" name="read">
-                    <option value="read">Read</option>
-                    <option value="unread">Unread</option>
+                <select id="status" name="status">
+                    <option value="status">Read</option>
+                    <option value="unstatus">Unread</option>
                 </select>
 
                 <!-- <button id="submit">Add to Library</button> -->
@@ -50,8 +50,10 @@
                         <th>Title</th>
                         <th>Author</th>
                         <th>Pages</th>
-                        <th class="switch">Read</th>
+                        <th id="status-row" class="switch">Read</th>
+                        <th id="delete-row">Delete</th>
                     </tr>
+
                 </thead>
                 <tbody id="shelf">
 
@@ -76,6 +78,6 @@
 
 
 
-    <script src="scripts.js"></script>
+    <script src="scripts2.js"></script>
 </body>
 </html>

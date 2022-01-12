@@ -50,13 +50,14 @@ function Book(title, author, pages, read) {
 // display current myLibrary array
 function displayLibrary() {
     for (let i = 0; i < (myLibrary.length); i++) {
-        let row = document.createElement("tr");
+        // let row = document.createElement("tr");
         Object.values(myLibrary[i]).forEach(val => {            
             // append to DOM            
-            let node = document.createElement("td");
-            let textnode = document.createTextNode(val);
-            node.appendChild(textnode);
-            document.getElementById("shelf").appendChild(row).appendChild(node);
+            // let node = document.createElement("td");
+            // let textnode = document.createTextNode(val);
+            // node.appendChild(textnode);
+            // document.getElementById("shelf").appendChild(row).appendChild(node);
+            displayNewBook();
         })
     }   
 }
@@ -85,11 +86,20 @@ function addBookToLibrary() {
             let textnode = document.createTextNode(val);
             node.appendChild(textnode);
             document.getElementById("shelf").appendChild(row).appendChild(node);
-        })
-        
+        });
         // 5. clear input forms
         clearForms();
     }
+}
+
+function displayNewBook() {
+    let row = document.createElement("tr");
+    Object.values(newBook).forEach(val => {
+        let node = document.createElement("td");
+        let textnode = document.createTextNode(val);
+        node.appendChild(textnode);
+        document.getElementById("shelf").appendChild(row).appendChild(node);
+    })
 }
 
 // reset input form
@@ -127,15 +137,15 @@ function validate() {
                     
                     
                     let label = document.createElement("label");
-                    label.className = "label";
+                    label.classList.add = "label";
                     let node = document.createElement("input");
                     node.type = "checkbox";
                     // node.checked = true;
-                    node.className = "label__input";
+                    node.classList.add = "label__input";
                     
                     // add div class for circle
                     let circle = document.createElement("div");
-                    circle.className = "label__circle";
+                    circle.classList.add = "label__circle";
                     // append both
                     document.getElementById("shelf").appendChild(row).appendChild(label).appendChild(node);
                     document.getElementById("shelf").appendChild(row).appendChild(label).appendChild(circle);       
@@ -159,14 +169,14 @@ function validate() {
     function readStatus() {
         // add checkbox input w/class
         let label = document.createElement("label");
-        label.className = "label";
+        label.classList.add = "label";
         let node = document.createElement("input");
         node.type = "checkbox";
         node.checked = true;
-        node.className = "label__input";
+        node.classList.add = "label__input";
         // add div class for circle
         let circle = document.createElement("div");
-        circle.className = "label__circle";
+        circle.classList.add = "label__circle";
         // append both
         document.getElementById("shelf").appendChild(row).appendChild(label).appendChild(node);
         document.getElementById("shelf").appendChild(row).appendChild(label).appendChild(circle);
@@ -179,6 +189,7 @@ function validate() {
             
 
     // create function to change object's 'read' or 'unread' to opposite
+    // if node.checked = true; -> node.checked = false; else if node.checked = false -> node.checked = true;
 
     // add function to prototype
 
@@ -189,7 +200,7 @@ function validate() {
 
 // button to remove book from library
     /* You will need to associate your DOM elements with the actual book objects in some way. One easy solution is giving them a data-attribute that corresponds to the index of the library array. */
-
+    // function to add books also adds data-key for myLibrary.length-1 on creation; 
 
 
 
