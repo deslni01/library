@@ -115,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('#submit').addEventListener("click", addBookToLibrary)   
 })
 
-
 function validate() {
     if (document.bookform.title.value == "") {
         return false;

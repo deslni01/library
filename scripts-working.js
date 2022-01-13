@@ -123,16 +123,14 @@ function Book(title, author, pages, read) {
     }
 
     // Change read status
-    // function changeStatus(read) { // look at remove from library
-    //     const myLibrary = getBooks();
+    function changeStatus(read) { // look at remove from library
+        const myLibrary = getBooks();
 
-    //     myLibrary.forEach((book) => {
-    //         console.log(book.read);
-    //     })
+        myLibrary.forEach((book) => {
+            console.log(book.read === read);
+        })
         
-   
-        
-    // }
+    }
 
 
 // Events
@@ -163,9 +161,7 @@ function Book(title, author, pages, read) {
     // Remove books
     document.querySelector('#shelf').addEventListener('click', (e) => { 
         // change status
-        const read = document.querySelector("#read").value;
-        console.log(read);
-        // changeStatus(e.target.read);
+        changeStatus(e.target);
 
         // remove from page
         removeBookShelf(e.target);
@@ -191,3 +187,36 @@ function Book(title, author, pages, read) {
     // })
 
 
+
+
+================================== here= ================
+
+
+        // Remove from library
+        if (document.classList.contains('deleteBtn')) {
+            function removeBookLibrary(pages) { // pages as 'indicator' to remove
+                const myLibrary = getBooks();
+    
+                myLibrary.forEach((book, index) => {
+                    if(book.pages === pages) {
+                        myLibrary.splice(index, 1);
+                    }
+                });
+    
+            localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
+            }
+        } else if (document.classList.contains('read-status')) {
+        // Change read status
+            function changeStatus() { // look at remove from library
+                const myLibrary = getBooks();
+    
+                myLibrary.forEach((book, index) => {
+                    if(book.read === 'read') {
+                        book.read === 'unread';
+                    } else {
+                        book.read === 'read';
+                    }
+                })
+                
+            }
+        }
